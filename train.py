@@ -40,9 +40,9 @@ import mlflow
 import os
 import tensorflow as tf
 
-from experiments.loaders import Loader
-from experiments.model_wrapper import PrototypeModel
-from experiments.general import get_logger
+from protolearn.loaders import Loader
+from protolearn.model_wrapper import PrototypeModel
+from protolearn.general import get_logger
 
 
 def parse_arguments():

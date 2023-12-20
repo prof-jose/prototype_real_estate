@@ -17,7 +17,7 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
 import tensorflow as tf
 
-from experiments.loaders import Loader
+from protolearn.loaders import Loader
 
 # Set the baseline model to evaluate
 CASE = 'tree'  # 'tree', 'forest', 'neural_net'
@@ -45,8 +45,7 @@ config_neural_net = {
 #   'n_units': [[40], [10, 10], [8, 8, 8]],
 
 # Specify the data to use
-CONFIG = './data/paris_per_m2_all.json'
-#CONFIG = './data/king_county_per_sqft_all.json'
+CONFIG = './data/king_county_per_sqft_all.json'
 
 
 # Below are the functions to train each model
@@ -265,7 +264,7 @@ def main():
     avg_results.sort_values(
         by=('val', 'mean'),
         ascending=True
-        ).to_csv('results_paris_{}.csv'.format(CASE), index=False)
+        ).to_csv('results_{}.csv'.format(CASE), index=False)
 
 
 if __name__ == '__main__':

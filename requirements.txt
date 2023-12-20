@@ -1,8 +1,9 @@
 pytest
 pytest-cov
-tensorflow
+tensorflow==2.12.0
 tensorflow-probability
 scikit-learn
 pandas
 plotly
 matplotlib
+mlflow==2.3.2

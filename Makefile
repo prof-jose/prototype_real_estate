@@ -1,9 +1,5 @@
 test_reproduce:
-	python train.py --config data/king_county_per_sqft.json --n_prototypes 100 --epochs 5  --learning-rate 0.01 --scale 0.1 --regularization 0 --logdir tmp --batch-size 256 --seed 12 | grep RESULTS | sed -e "s@^.*[RESULTS\]@@g" > aux1.txt
-	python train.py --config data/king_county_per_sqft.json --n_prototypes 100 --epochs 5  --learning-rate 0.01 --scale 0.1 --regularization 0 --logdir tmp --batch-size 256 --seed 12 | grep RESULTS | sed -e "s@^.*[RESULTS\]@@g" > aux2.txt
-	diff aux1.txt aux2.txt
-	rm aux1.txt aux2.txt
-	echo "Test reproduce = OK"
+	python train.py --config data/king_county_per_sqft.json --n_prototypes 100 --epochs 5  --learning-rate 0.01 --scale 0.1 --regularization 0 --logdir tmp --batch-size 256 --seed 12 | grep RESULTS | sed -e "s@^.*[RESULTS\]@@g" > aux1.txt && python train.py --config data/king_county_per_sqft.json --n_prototypes 100 --epochs 5  --learning-rate 0.01 --scale 0.1 --regularization 0 --logdir tmp --batch-size 256 --seed 12 | grep RESULTS | sed -e "s@^.*[RESULTS\]@@g" > aux2.txt && diff aux1.txt aux2.txt && rm aux1.txt aux2.txt && echo "Test reproduce = OK"
 
 ## TARGETS RELATED TO DATA PREPARATION
 
